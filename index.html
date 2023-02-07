@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        
-        const userName = prompt('What`s your name?');
-        const random = Math.floor(Math.random() * 100) + 1;
-        
+      // string
+      const userName = prompt("What`s your name?");
+      // number
+      const random = Math.floor(Math.random() * 100) + 1;
 
-        while ((userName !==null)||(guess !==null)) {
-            let userGuess = +prompt ('Guess a number between 1-100!');
-                
-            if (userGuess < random) {
-                    alert('Sorry '+ userName + ', the number is higher!');
-                }   else if (userGuess > random) {
-                        alert('Sorry '+ userName + ', the number is smaller!');
-                    
-                    }       else if (userGuess === random) {
-                            alert('Congrats, ' + userName + '!');
-                             break;
-                         }                
+      // nullable string
+      let userGuess;
+      // number
+      let userGuessNumber;
+      
+      while (userName !== null) {
+        // prompt the user for a guess
+        userGuess = prompt("Guess a number between 1-100!");
+
+        // break if the user presses the cancel button
+        if (userGuess === null) break;
+
+        // if not, convert the input to a number using unary plus operator
+        userGuessNumber = +userGuess
+
+        if (userGuess < random) {
+          alert("Sorry " + userName + ", the number is higher!");
+        } else if (userGuess > random) {
+          alert("Sorry " + userName + ", the number is smaller!");
+        } else if (userGuess === random) {
+          alert("Congrats, " + userName + "!");
+          break;
         }
-
+      }
     </script>
-</body>
+  </body>
 </html>
